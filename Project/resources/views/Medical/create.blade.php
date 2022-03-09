@@ -1,4 +1,4 @@
-@include('student.bootstrap')
+@include('Medical.bootstrap')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -10,33 +10,41 @@
             <div class="card">
             <div class="card-header">
                     <h4>
-                    <a href="{{ url('students') }}" class="btn btn-outline-danger float-end">Lists</a>
-                    Add Student
+                    <a href="{{ url('doctors') }}" class="btn btn-outline-danger float-end">Lists</a>
+                    Add Doctor
                     </h4>
                 </div>
                 <div class="card-body">
 
-                    <form action="{{ url('add-student') }}" method="POST">
+                    <form action="{{ url('add-doctors') }}" method="POST">
                         @csrf
 
                         <div class="form-group mb-3">
-                            <label for="">Student Name</label>
+                            <label for="">Doctor's Name</label>
                             <input type="text" name="name" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="">Student Email</label>
+                            <label for="">Doctor's Phone Number</label>
+                            <input type="text" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">Doctor's Email</label>
                             <input type="text" name="email" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="">Student Course</label>
-                            <input type="text" name="course" class="form-control">
+                            <label for="">Doctor's Department</label>
+                            <input type="text" name="department" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="">Student Section</label>
-                            <input type="text" name="section" class="form-control">
+                            <label for="">Doctor's Bio</label>
+                            <input type="text" name="bio" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            
+                            <label for=""> Doctor's Joining Date</label>
+                            <input type="text" name="joining_date" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                       
                         </div>
                         <div>
                         <div class="form-group mb-3">

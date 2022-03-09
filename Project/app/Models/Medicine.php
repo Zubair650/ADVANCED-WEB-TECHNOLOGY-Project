@@ -11,6 +11,12 @@ class Medicine extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id';
+    protected $table = 'medicines';
+    protected $fillable = [
+        'name',
+        'disease',
+        'details',
+    ];
     public function medicines()
     {
         return $this-> hasMany(Disease::class,'id');

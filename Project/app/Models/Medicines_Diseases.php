@@ -11,6 +11,10 @@ class Medicines_Diseases extends Model
 {
     use HasFactory;
     public $table = 'medicines_diseases';
+    protected $fillable = [
+        'Medicines_id',
+        'Diseases_id'
+    ];
     public function medicine()
     {
         return $this-> belongsTo(Medicine::class,'Medicines_id');
