@@ -14,6 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\MedicalController;
+use App\Http\Controllers\PhoneAuthController;
+//use App\Http\Controllers\NexmoSMSController;
+
+//Route::get('sendSMS', [NexmoSMSController::class, 'index']);
+Route::get('phone-auth', [PhoneAuthController::class, 'index']);
+Route::post('phone-auth', [PhoneAuthController::class, 'otp_store']);
+
+//Route::get('login-otp', [PhoneAuthController::class, 'login_otp']);
+Route::get('/main', [PhoneAuthController::class, 'login_otp']);
+Route::post('/main',[PhoneAuthController::class, 'checkLogin'])->name('checkLogin');
+
+
+Route::get('main/successlogin', [PhoneAuthController::class,'successlogin']);
+//Route::get('main/logout', 'PhoneAuthController@logout');
+
 
 Route::get('add-doctors', [MedicalController::class, 'create']);
 Route::post('add-doctors', [MedicalController::class, 'store']);
