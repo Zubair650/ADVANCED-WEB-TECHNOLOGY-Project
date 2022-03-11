@@ -21,6 +21,11 @@ class MedicalController extends Controller
         $med = Medicine::all();
         return view('Medical.Medicine_index', compact('med'));
     }
+    public function index_medis()
+    {
+        $dis = Disease::all();
+        return view('Medical.Medis', compact('dis'));
+    }
 
     public function index_dis()
     {
@@ -172,20 +177,35 @@ class MedicalController extends Controller
     }
     public function destroy_med($id)
     {
-        $med = Medicine::find($id);
+        $med =Medicine::find($id)->leftJoin('medicines_diseases','medicines.id', '=','medicines_diseases.Medicines_id')->where('medicines.id', $id); 
+        Medicines_Diseases::where('Medicines_id', $id)->delete();                           
         $med->delete();
+        
+        /*$med = Medicine::find($id);
+        $med->delete($id);
+        
+        $Medicines_id = $id;
+        $m = Medicines_Diseases::find($Medicines_id);
+        $m->delete($id);*/
+
         return redirect()->back()->with('status','Medicines Information Deleted Successfully');
     }
     public function destroy_dis($id)
     {
-        $dis = Disease::find($id);
+        $dis =Disease::find($id)->leftJoin('medicines_diseases','diseases.id', '=','medicines_diseases.Diseases_id')->where('diseases.id', $id); 
+        Medicines_Diseases::where('Diseases_id', $id)->delete();                           
         $dis->delete();
+
+        /*$dis = Disease::find($id);
+        $dis->delete();*/
+        
         return redirect()->back()->with('status','Diseases Information Deleted Successfully');
     }
     public function destroy_md($id)
     {
         $md = Medicines_Diseases::find($id);
         $md->delete();
+    
         return redirect()->back()->with('status',' Information Deleted Successfully');
     }
 }

@@ -38,6 +38,8 @@ Route::get('edit-doctors/{id}', [MedicalController::class, 'edit']);
 Route::put('update-doctors/{id}', [MedicalController::class, 'update']);
 Route::get('delete-doctors/{id}', [MedicalController::class, 'destroy']);
 
+Route::get('index_medis', [MedicalController::class, 'index_medis']);
+
 Route::get('add-med', [MedicalController::class, 'create_med']);
 Route::post('add-med', [MedicalController::class, 'store_med']);
 

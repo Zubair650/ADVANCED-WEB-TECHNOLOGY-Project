@@ -22,19 +22,14 @@
                         @csrf
                    
                       
-                        @foreach($Diseases as $row)
-                            <li>{{$row->id->name}}</li>
+                        @foreach($dis as $row)
+                        <div class="btn-group-horizontal" >
+                           <a href="{{url('Med_Dis/'.$row->id)}}" class="btn btn-outline-dark d-grid" ><b>{{$row->name}}</a> 
+                        </div> 
+                        <br>  
                         @endforeach
                     
                         
-                        
-                        <div>
-                        <div class="form-group mb-3">
-                        <br><br>
-                        
-                        <div class="card-footer">
-                        <button type="submit" class="btn btn-success">Save</button>
-                        </div>
                         </div>
 
                     </form>
