@@ -89,6 +89,7 @@ class MedicalController extends Controller
         $med->name = $request->input('name');
         $med->disease = $request->input('disease');
         $med->details = $request->input('details');
+        $med->price = $request->input('price');
         
         $med->save();
         return redirect()->back()->with('status','Medicine Information Added Successfully');
@@ -154,6 +155,7 @@ class MedicalController extends Controller
         $med->name = $request->input('name');
         $med->disease = $request->input('disease');
         $med->details = $request->input('details');
+        $med->price = $request->input('price');
        
         $med->update();
         return redirect()->back()->with('status','Medicines Information Updated Successfully');

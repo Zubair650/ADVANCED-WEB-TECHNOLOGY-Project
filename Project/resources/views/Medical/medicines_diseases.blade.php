@@ -24,6 +24,8 @@
                                 <td><b><li>{{$item->medicine->name}}</b></li>
                                     
                                     {{$item->medicine->details}}
+
+                                   <br><span><b>Price: </b></span> {{$item->medicine->price}} <span> BDT </span>
                                     
                                 </td>
                                <td> <a href="{{ url('destroy_md/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a></td>

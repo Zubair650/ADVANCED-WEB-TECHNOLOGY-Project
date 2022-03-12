@@ -31,6 +31,10 @@
                             <label for="">Medicine's Details</label>
                             <input type="text" name="details" class="form-control">
                         </div>
+                        <div class="form-group mb-3">
+                            <label for="">Medicine's Price</label>
+                            <input type="text" name="price" class="form-control">
+                        </div>
                         
                         
                         <div>

@@ -18,7 +18,7 @@
                                 <th>Name</th>
                                 <th>Disease</th>
                                 <th>Details</th>
-                                
+                                <th>Price(BDT)</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -30,7 +30,7 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->disease }}</td>
                                 <td>{{ $item->details }}</td>
-                                
+                                <td>{{ $item->price }} BDT</td>
                                 <td>
                                     <a href="{{ url('edit-med/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                     <td>

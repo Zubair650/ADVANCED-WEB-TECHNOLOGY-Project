@@ -16,6 +16,7 @@ class Medicine extends Model
         'name',
         'disease',
         'details',
+        'price',
     ];
     public function medicines()
     {
