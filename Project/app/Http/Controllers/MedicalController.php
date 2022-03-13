@@ -85,6 +85,22 @@ class MedicalController extends Controller
 
     public function store_med(Request $request)
     {
+        $request->validate(
+            [
+              'name'=>'required', 
+              'disease'=>'required',
+              'details'=>'required',
+              'price'=>'required|regex:/^[0-9]+$/',
+            ],
+            [
+              'name.required'=>'Please Enter a valid Name',
+              'disease.required'=>'Please Enter a valid Disease',
+              'details.required'=>'Please Enter a valid Details',
+              'price.required'=>'Please Enter a valid Price',
+              'price.regex'=>'Please Enter a Numeric Price',
+            ]
+          );
+
         $med = new Medicine;
         $med->name = $request->input('name');
         $med->disease = $request->input('disease');
@@ -97,6 +113,18 @@ class MedicalController extends Controller
 
     public function store_dis(Request $request)
     {
+        $request->validate(
+            [
+              'name'=>'required', 
+              'medicine'=>'required',
+              'details'=>'required',
+            ],
+            [
+              'name.required'=>'Please Enter a valid Name',
+              'medicine.required'=>'Please Enter a valid medicine',
+              'details.required'=>'Please Enter a valid Details',
+            ]
+          );
         $dis = new Disease;
         $dis->name = $request->input('name');
         $dis->medicine = $request->input('medicine');

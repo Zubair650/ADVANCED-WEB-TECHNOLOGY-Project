@@ -1,11 +1,11 @@
 @include('Medical.bootstrap')
-<div class="container">
+<div class="container p-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
 
-            @if (session('status'))
+            <!--@if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }}</h6>
-            @endif
+            @endif-->
 
             <div class="card">
             <div class="card-header">

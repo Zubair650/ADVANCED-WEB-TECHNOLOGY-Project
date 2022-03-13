@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,3 +63,9 @@ Route::get('Med_Dis', [MedicalController::class, 'MeDis']);//dlist
 Route::post('Med_Dis', [MedicalController::class, 'store_MeDis']);//dlist destroy_md
 
 Route::get('destroy_md/{id}', [MedicalController::class, 'destroy_md']);
+
+
+Route::get('/search', [PhoneAuthController::class, 'find']);
+Route::post('/search_result',[PhoneAuthController::class, 'findSearch'])->name('findSearch');
+
+//Route::get('/search_result', [PhoneAuthController::class, 'search_result']);

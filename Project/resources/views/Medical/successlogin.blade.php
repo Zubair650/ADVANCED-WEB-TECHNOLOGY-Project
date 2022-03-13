@@ -1,22 +1,27 @@
 <html>
- <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style type="text/css">
-   .box{
-    width:600px;
-    margin:0 auto;
-    border:1px solid #ccc;
-   }
-  </style>
- </head>
+@include('Medical.bootstrap')
  <body>
   <br />
-  <div class="container box">
-   <h3 >Login Successful</h3>
+  <div class="container p-4">
+  <div class="row justify-content-center">
+        <div class="col-md-6">
 
-   <br />
+            <div class="card">
+            <div class="card-header">
+                    <h4>
+                    Login Successful
+                    </h4>
+                   
+                </div>
+                <div class="card-body">
+                 <a href="{{ url('med') }}" class="btn btn-outline-primary d-grid"><b>Medicines Lists</b></a>
+                 <br>
+                <a href="{{ url('dis') }}" class="btn btn-outline-primary d-grid"> <b>Diseases Lists</b></a>
+                 <br>
+                  <a href="{{ url('search') }}" class="btn btn-outline-primary d-grid"><b>Search Details about Diseases</b></a>   
+                     </h4>
+                </div>
+   
   </div>
  </body>
 </html>

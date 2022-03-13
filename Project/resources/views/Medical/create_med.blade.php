@@ -1,5 +1,5 @@
 @include('Medical.bootstrap')
-<div class="container">
+<div class="container p-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
 
@@ -21,19 +21,31 @@
 
                         <div class="form-group mb-3">
                             <label for="">Medicine's Name</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" value="{{old('name')}}" class="form-control">
+                            @error('name')
+                            <span class="text-danger"> {{$message}} </span>
+                            @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Medicine's Disease</label>
-                            <input type="text" name="disease" class="form-control">
+                            <input type="text" name="disease" value="{{old('disease')}}" class="form-control">
+                            @error('disease')
+                            <span class="text-danger"> {{$message}} </span>
+                            @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Medicine's Details</label>
-                            <input type="text" name="details" class="form-control">
+                            <input type="text" name="details" value="{{old('details')}}" class="form-control">
+                            @error('details')
+                            <span class="text-danger"> {{$message}} </span>
+                            @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Medicine's Price</label>
-                            <input type="text" name="price" class="form-control">
+                            <input type="text" name="price" value="{{old('price')}}" class="form-control">
+                            @error('price')
+                            <span class="text-danger"> {{$message}} </span>
+                            @enderror
                         </div>
                         
                         

@@ -6,6 +6,12 @@ use App\Models\OTP;
 use Hash;
 use Session;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests;
+//use Illuminate\Support\Facades\Input;
+use App\Models\Disease;
+use App\Models\Doctor;
+use Illuminate\Support\Str;
+
 
 //use Validator;
 //use Auth;
@@ -56,6 +62,31 @@ class PhoneAuthController extends Controller
      
       return view('Medical.successlogin');
     }
+    public function find()
+    {	
+    return view('Medical.search');			
+    }		
+    public function findSearch(Request $request)
+    {			
+      $request->validate(
+        [
+          'name'=>'required|exists:diseases,name', 
+        ],
+        [
+          'name.required'=>'Please Enter a valid Name',
+          'name.exists'=>'Name does not exist',
+          
+        ]
+      );
+      //$user = Disease:: where('name',$request->name);
+      //return view('Medical.search_result', compact('user'));
+      //$user = Doctor::where('name',$request->name);
+      $Name = $request->name;
+      $Name = Str::ucfirst($Name);
+      $user = Disease :: all()->where('name',$Name);
+      return view('Medical.search_result')->with('user',$user);
+    }
+    
 
   
 }

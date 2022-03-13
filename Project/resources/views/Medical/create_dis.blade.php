@@ -1,5 +1,5 @@
 @include('Medical.bootstrap')
-<div class="container">
+<div class="container p-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
 
@@ -21,15 +21,24 @@
 
                         <div class="form-group mb-3">
                             <label for="">Disease's Name</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" value="{{old('name')}}" class="form-control">
+                            @error('name')
+                            <span class="text-danger"> {{$message}} </span>
+                            @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Disease's Medicine</label>
-                            <input type="text" name="medicine" class="form-control">
+                            <input type="text" name="medicine" value="{{old('medicine')}}" class="form-control">
+                            @error('medicine')
+                            <span class="text-danger"> {{$message}} </span>
+                            @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Disease's Details</label>
-                            <input type="text" name="details" class="form-control">
+                            <input type="text" name="details" value="{{old('details')}}" class="form-control">
+                            @error('details')
+                            <span class="text-danger"> {{$message}} </span>
+                            @enderror
                         </div>
                         
                         

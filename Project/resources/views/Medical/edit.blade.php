@@ -1,7 +1,7 @@
 
 
 @include('Medical.bootstrap')
-<div class="container">
+<div class="container p-4">
     <div class="row">
         <div class="col-md-12">
 

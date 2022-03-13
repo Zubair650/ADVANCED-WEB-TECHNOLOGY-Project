@@ -1,5 +1,5 @@
 @include('Medical.bootstrap')
-<div class="container">
+<div class="container p-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
 

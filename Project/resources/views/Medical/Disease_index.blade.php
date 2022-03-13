@@ -1,6 +1,7 @@
 
 @include('Medical.bootstrap')
-<div class="container">
+
+<div class="container p-4">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -9,6 +10,8 @@
                         <a href="{{ url('add-dis') }}" class="btn btn-outline-success float-end">Add Disease</a>
                     </h4>
                 </div>
+
+
                 <div class="card-body">
 
                     <table class="table table-bordered table-striped">

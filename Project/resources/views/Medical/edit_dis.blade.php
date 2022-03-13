@@ -1,7 +1,6 @@
 
-
 @include('Medical.bootstrap')
-<div class="container">
+<div class="container p-4">
     <div class="row">
         <div class="col-md-12">
 
@@ -33,7 +32,6 @@
                             <label for="">Disease's Details</label>
                             <input type="text" name="details" value="{{$dis->details}}" class="form-control">
                         </div>
-                        
                         
                         <div class="form-group mb-3">
                             <button type="submit" class="btn btn-primary">Update Disease's Information</button>
